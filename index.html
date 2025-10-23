@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Calculadora completa</title>
+
+    <!-- Meta tags -->
+    <meta name="title" content="Calculadora completa" />
+    <meta name="description"
+        content="Calculadora completa con historial, soporte para paréntesis y teclas de acceso rápido." />
+    <meta name="keywords"
+        content="calculadora, calculator, javascript, html, css, web app, app, historial, paréntesis, teclado" />
+    <meta name="author" content="Gabriel Marte" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculadora completa" />
+    <meta property="og:description"
+        content="Calculadora completa con historial, soporte para paréntesis y teclas de acceso rápido." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://calculator.vercel.app/calc.png" />
+    <meta property="og:image" content="https://calculator.vercel.app/calc.png" />
+</head>
+
+<body>
+    <main class="calculator" aria-label="Calculadora">
+        <div class="header">
+            <div class="title">Calculadora completa</div>
+            <button id="toggleHistory" class="history-toggle" title="Mostrar historial (H)">Historial</button>
+        </div>
+
+        <div class="display" role="region" aria-live="polite">
+            <div id="previous" class="previous" aria-hidden="true"></div>
+            <div id="current" class="current" aria-label="Pantalla">0</div>
+        </div>
+
+        <section class="pad" role="grid" aria-label="Teclado de la calculadora">
+            <button class="btn small" data-action="clear-entry" title="CE">CE</button>
+            <button class="btn small danger" data-action="clear-all" title="C">C</button>
+            <button class="btn small" data-action="backspace" title="Retroceso (Backspace)">←</button>
+            <button class="btn op" data-value="/" title="Dividir">/</button>
+
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn op" data-value="*" title="Multiplicar">×</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn op" data-value="-" title="Restar">−</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn op" data-value="+" title="Sumar">+</button>
+
+            <button class="btn" data-action="plusminus" title="Cambiar signo">+/-</button>
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value="." title="Decimal">.</button>
+            <button class="btn op" data-action="percent" title="Porcentaje">%</button>
+
+            <button class="btn" data-value="(" title="Abrir paréntesis">(</button>
+            <button class="btn" data-value=")" title="Cerrar paréntesis">)</button>
+            <button class="btn equal" data-action="equals" title="Igual (Enter)">=</button>
+        </section>
+
+        <div id="history" class="history" aria-label="Historial de operaciones"></div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
